@@ -1,4 +1,4 @@
-class BoardIA	{
+public class BoardIA	{
 
 	public GameState state;
 	public HumanPlayer player1;
@@ -14,7 +14,11 @@ class BoardIA	{
 		
 	}
 	
-
+	/**
+	*@param Move le coup choisi par le joueur
+	*@param int[] tableau representant le tableau des allumettes
+	*@return boolean permettant de savoir si un coup est valide ou pas
+	**/
 	public boolean validMove(Move l, int[] tab)	{
 
 		int total= (tab.length*tab.length);
@@ -81,29 +85,38 @@ class BoardIA	{
 		while(current!= null)	{
 
 			if(current.value.kerf && v==0)	{
-				while(this.state.board[j]==0 )	{
+				while(this.state.board[j]==0)	{
 					j=(int)( Math.random()*( (this.state.board.length-1)- 1 + 1 ) + 1);
 				}
-				m= new Move(j+1,(int)( Math.random()*( 3- 1 + 1 ) + 1));
+				return new Move(j+1,(int)( Math.random()*( 3- 1 + 1 ) + 1));
 			}
 			if(current.value.kerf && v!=0)	{
 				max=3;
 				if(v>max)	v=max;
-				while(this.state.board[j]==0  || j>this.state.board.length-1 || j<0 )	{
-					j=(int)( Math.random()*( (this.state.board.length-1)- 1 + 1 ) + 1);
+				LC<Integer> possibilities=verify(v,this.state.board); 
+				while(possibilities.estListeVide())	{
+					v--;
+					possibilities=verify(v,this.state.board);
 				}
 				
-				while(this.state.board[j]<v && this.state.board[j]!=0 && v>=1)	{
-					v--;
-				}
-				m= new Move(j+1,v);
-			return m;
+				j=possibilities.maillonAleatoire((int)( Math.random()*( possibilities.longListe()))).value;
+				return new Move(j+1,v);
+			
 			}
 			v++;
 			current=current.next;
 		}
 		return m;
 			
+	}
+
+	public static LC<Integer> verify(int v,int[] tab)	{
+		LC<Integer> list= new LC<Integer>();
+		for(int i=0; i<tab.length; i++)	{
+			if(tab[i]-v>=0)
+				list.addhead(i);
+		}
+		return list;
 	}		
 
 	
