@@ -81,11 +81,8 @@ class BoardIA	{
 		while(current!= null)	{
 
 			if(current.value.kerf && v==0)	{
-				while(this.state.board[j]==0 && j>(this.state.board.length/2)+1)	{
-					j--;
-				}
-				while(this.state.board[j]==0 && j<=(this.state.board.length/2)+1)	{
-					j++;
+				while(this.state.board[j]==0 )	{
+					j=(int)( Math.random()*( (this.state.board.length-1)- 1 + 1 ) + 1);
 				}
 				m= new Move(j+1,(int)( Math.random()*( 3- 1 + 1 ) + 1));
 			}
