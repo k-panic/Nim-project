@@ -1,22 +1,19 @@
 package nim;
-/**
- * 
- * @author tp3-gr2
- *
- */
+
+
+
 
 /**
  * 
- * cette classe permet de gerer les 
- * differents joueurs humains.
+ * cette classe cree un joueur de type HumanPlayer() ayant un nom
  *
  */
 public class HumanPlayer	{
 
 	public String name;
 	/**
-	 * represent le constructeur de la classe. 
-	 * @param name est le nom saisie par le joueur .
+	 * Constructeur de la classe. 
+	 * @param name on donne une chaine de caractere en parametre puis cree un nouveau joueur ayant pour nom cette chaine de caractere
 	 * 
 	 */
 
@@ -25,12 +22,10 @@ public class HumanPlayer	{
 		this.name= name;
 		
 	}
-	
-	/**
-	   * la methode tostring permet de reourner une chaine de 
-	   * de caractere qui est le nom du joueur. 
-	   */
 
+	/**
+	 * la methode tostring retourne une chaine de caractere contenant les informations du joueur. 
+	 */
 	public String toString()	{
 		return this.name;
 	}

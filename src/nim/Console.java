@@ -1,17 +1,21 @@
 package nim;
+
 import java.util.*;
+
 /**
  * 
  * @author tp3-gr2
  *
  */
 
-/**
+
+public class Console	{
+	
+	/**
  * 
  * la classe console  permet a un joueur humain d interagir avec le programme
  *
  */
-public class Console	{
 
 	static Scanner in= new Scanner(System.in);
 
@@ -19,6 +23,7 @@ public class Console	{
 	 *  demande au joueur de saisir le nombre de lignes du plateau et retourne cet entier 
 	 * @return le nombre saisi par le joueur 
 	 */
+
 	public static int getSize()	{
 		int n=0;
 		do{
@@ -26,18 +31,17 @@ public class Console	{
 			n=in.nextInt();
 		}while(n<=1);
 		return n;
-
 	}	
 	
 	/**
 	 *  demande au joueur de saisir un coup sous la forme m n ou m est le numero de la ligne et 
 	 *  n est le nombre d allumettes a retirer. 
-	 *  Cette methode verifie les ereurs qui peuvent arriver pendant la saisie des deux entiers
+	 *  Cette methode verifie les erreurs qui peuvent arriver pendant la saisie des deux entiers
 	 * @param name est le nom du joueur qui joue le coup 
 	 * @return renvoie un coup valide 
 	 */
 
-	public static Move getMove(String name)	{ 
+	public static  Move getMove(String name)	{ 
 		Scanner inmove= new Scanner(System.in);
 		int [] inputtab;
 		System.out.print("Donnez le numero de la ligne suivi du nombre d'allumette: ");
@@ -69,10 +73,13 @@ public class Console	{
 		
 	}
 
+
+
+
 	/**
-	 *  la methode showBoard est une methode represente une pyramide en se referant sur le nombre se trouvant dans la case i du tableau en parametre
+	 *  la methode showBoard est une methode represente une pyramide en se referant sur le nombre se trouvant dans la case i
 	 *  
-	 * @param board tableau dont la case i represente le nombre d'allumettes de la ligne i
+	 * @param board tableau dont la case i represente le nombre d allumettes de la ligne i
 	 */
 	
 	public static void showBoard(int[] board)    { 
@@ -123,19 +130,19 @@ public class Console	{
 			System.out.println("Vous ne pouvez pas supprimer "+l.allumettes+" allumettes sur la ligne "+l.ligne);
 
 	}
-	
+
 	/** 
-	 * la methode askName permet de saisir le nom du joeur 
-	 * @return un joueur de type HumanPlayer() dont le nom est la chaine de caractere saisie par l'utilisateur
+	 * la methode askName permet de saisir le nom du joeur i
+	 *@param i numero du joueur 
+	 * @return un joueur de type HumanPlayer() dont le nom est la chaine de caractere saisie par l utilisateur
 	 */
+	public static HumanPlayer askName(int i)	{
 
-	public static HumanPlayer askName()	{
-
-		System.out.print("Donnez votre nom:\n--> ");
+		System.out.print("Donner le nom du joueur "+i+":\n--> ");
 
 		return new HumanPlayer(in.next());
 	}
-
+	
 	/**
 	 * cette methode se contente d afficher un message indiquant que le joueur donne en parametre est le gagnant de la partie
 	 * @param name represente le nom du joueur 
