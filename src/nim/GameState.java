@@ -1,7 +1,5 @@
 package nim;
 
-
-
 /**
  * 
  * @author tp3-gr2
@@ -30,9 +28,9 @@ public class GameState	{
 	}
 
 	/**
-	 * Methode qui permet de supprimer le coup l dans le plateau de jeu
+	 * Methode qui permet de jouer le coup l dans le plateau de jeu
 	 * 
-	 * @param l est la ligne dans laquelle on veut supprimer des allumettes
+	 * @param l est le coup que l on veut jouer 
 	 */
 	public void supprimer(Move l)	{
 		

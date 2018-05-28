@@ -1,8 +1,6 @@
 package nim;
 
 
-
-
 /**
  * 
  * cette classe cree un joueur de type HumanPlayer() ayant un nom
@@ -24,7 +22,7 @@ public class HumanPlayer	{
 	}
 
 	/**
-	 * la methode tostring retourne une chaine de caractere contenant les informations du joueur. 
+	   * la methode tostring retourne une chaine de caractere contenant les informations du joueur. 
 	 */
 	public String toString()	{
 		return this.name;

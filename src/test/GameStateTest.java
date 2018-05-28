@@ -1,8 +1,8 @@
 package test;
-import static org.junit.Assert.assertEquals;
 import nim.GameState;
 import nim.Move;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -20,19 +20,9 @@ public class GameStateTest  {
 		int t=n.board[l.ligne-1];int v=n.nbAl;
 		n.supprimer(l);
 		//verifie que la suppression est bien faite
-		boolean taille_tab= (n.board.length>0);
-		boolean taille= (n.board.length==10);
-		boolean after_remove= (n.board[l.ligne-1]==t-l.allumettes);
-		boolean total_allum_remove= (n.nbAl== v-l.allumettes);
-		boolean  total_allum= (v==10*10);
+		boolean res=(n.board.length>0 && n.board.length==10 && n.board[l.ligne-1]==t-l.allumettes && n.nbAl== v-l.allumettes && verifnbAl && v==10*10);
 		
-		assertEquals(true,verifnbAl);
-		assertEquals(true,taille_tab);
-		assertEquals(true,taille);
-		assertEquals(true,after_remove);
-		assertEquals(true,total_allum_remove);
-		assertEquals(true,total_allum);
-		
+		Assert.assertEquals(true,res);
 		
 		
 		

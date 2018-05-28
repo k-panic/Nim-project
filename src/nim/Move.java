@@ -1,6 +1,4 @@
 package nim;
-
-
 /**
  * 
  * @author tp3-gr2
@@ -9,7 +7,7 @@ package nim;
 
 /**
  * 
- * represente un coup (un numero de ligne et un  nombre d allumettes).
+ * represente un coup (une ligne et un  nombre d allumettes).
  *
  */
 public class Move	{
