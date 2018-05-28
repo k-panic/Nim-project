@@ -1,7 +1,4 @@
 package nim;
-
-
-
 /**
  * 
  * @author tp3-gr2
@@ -16,9 +13,10 @@ public class GameState	{
 	public int[] board;
 	public int nbAl;
 	
+
 	/**
-	 * repreesente l etat courant du jeu.
-	 * @param n est la taille du plateau de jeu .
+	 * represente l'etat courant du jeu.
+	 * @param n est le nombre de lignes du plateau de jeu .
 	 */
 	public GameState(int n)	{
 
@@ -30,20 +28,27 @@ public class GameState	{
 	}
 
 	/**
-	 * Methode qui permet de supprimer le coup l dans le plateau de jeu
+	 * methode permettant d enlever un certain nombre d allumettes du plateau.
 	 * 
-	 * @param l est la ligne dans laquelle on veut supprimer des allumettes
+	 * @param l est la ligne dans laquelle on veut supprimer des allumettes.
 	 */
 	public void supprimer(Move l)	{
 		
 		int t=0;
 		while(t<l.allumettes)	{
-			if(this.board[l.ligne-1]>0)	{
-				this.board[l.ligne-1]--;
-				this.nbAl--;
-			}
-			t++;
-			if(t==l.allumettes)	break;
+		
+			
+			
+				if(this.board[l.ligne-1]>0)	{
+					this.board[l.ligne-1]--;
+					this.nbAl--;
+				}
+
+				t++;
+				
+				
+				if(t==l.allumettes)	break;
+		
 		}
 		
 	}

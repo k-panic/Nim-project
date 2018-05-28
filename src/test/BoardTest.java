@@ -15,14 +15,14 @@ public class BoardTest {
 	public void verifconstructor()	{
 		
 		HumanPlayer player1= new HumanPlayer("Barry");
-		HumanPlayer player2= new HumanPlayer("Sow");
+		HumanPlayer player2= new HumanPlayer("Machine");
 		
 		Board n= new Board(new GameState(6),player1,player2);
 		
 		boolean total_allum= (n.state.nbAl== 6*6);
 		boolean taille_tab= (n.state.board.length==6);
 		boolean name_1= (n.player1.name=="Barry");
-		boolean name_2= (n.player2.name=="Sow");
+		boolean name_2= (n.player2.name=="Machine");
 		assertEquals(true,total_allum);
 		assertEquals(true,taille_tab);
 		assertEquals(true,name_1);
@@ -35,7 +35,7 @@ public class BoardTest {
 	public void validmove()	{
 		
 		HumanPlayer player1= new HumanPlayer("Barry");
-		HumanPlayer player2= new HumanPlayer("Sow");
+		HumanPlayer player2= new HumanPlayer("Machine");
 		
 		Board n= new Board(new GameState(6),player1,player2);
 		
